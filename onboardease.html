@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnboardEase AI - Product Details</title>
+
+  <!-- 스타일 및 아이콘 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .onboardease-section {
+      text-align: center;
+    }
+
+    .onboardease-wrapper {
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .onboardease-section img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .onboardease-section h3 {
+      margin-top: 2rem;
+    }
+
+    .onboardease-wrapper ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header 로드 및 햄버거 버튼 바인딩 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+
+          const hamburgerBtn = document.getElementById('hamburger-btn');
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('show');
+              document.body.style.overflow = mobileMenu.classList.contains('show') ? 'hidden' : 'auto';
+            });
+          }
+
+          // 내부 앵커 이동 처리 (index.html#xxx 용)
+          const links = document.querySelectorAll('.header__menu a');
+          links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+              link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              });
+            }
+          });
+        })
+        .catch(error => console.error('Header 로딩 오류:', error));
+    });
+  </script>
+
+  <!-- 콘텐츠 영역 -->
+  <main class="section max-container onboardease-section">
+    <h2 class="tittle">OnboardEase AI</h2>
+
+    <div class="onboardease-wrapper">
+      <p style="font-size: 1.2rem;">
+        Simplify customer onboarding with smart guidance. OnboardEase AI cuts onboarding time by 50% and improves customer satisfaction with personalized support.
+      </p>
+
+      <img src="images/online_meeting_AI.png" alt="OnboardEase AI" />
+
+      <h3>Key Benefits</h3>
+      <ul>
+        <li>Reduces onboarding time with step-by-step automation.</li>
+        <li>Enhances customer satisfaction through tailored guidance.</li>
+        <li>Lowers support workload with proactive assistance.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer 삽입 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Footer 로딩 오류:', error));
+    });
+  </script>
+
+</body>
+</html>

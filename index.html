@@ -28,275 +28,409 @@
     <!-- Fontawesome  -->
     <script src="https://kit.fontawesome.com/d601811358.js" 
     crossorigin="anonymous"></script>
+    <!-- Chart.js 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Javascript -->
      <script src="src/main.js" defer></script>
 </head>
 <body>
+  
     <!-- Header -->
-    <header class="header">
+    <!-- <header class="header">
+      <div class="header__top">
         <div class="header__logo">
             <img class="header__logo-img" src="images/favicon.ico" alt="logo">
             <h1 class="header__logo-title"><a href="#">Kim</a></h1>
         </div>
+        <button class="hamburger" id="hamburger-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+            <span class="hamburger__line"></span>
+        </button>
         <nav class="header__nav">
-            <ul class="header__menu">
-                <li><a class="header__menu__item active" href="#home">Home</a></li>
-                <li><a class="header__menu__item" href="#about">About</a></li>
-                <li><a class="header__menu__item" href="#skills">Skills</a></li>
-                <li><a class="header__menu__item" href="#work">My Work</a></li>
-                <li><a class="header__menu__item" href="#testimonials">Testimonials</a></li>
-                <li><a class="header__menu__item" href="#contact">Contact</a></li>
+            <ul class="header__menu" id="mobile-menu">
+              <li>
+                <button class="hamburger-close" 
+                onclick="document.getElementById('mobile-menu').classList.remove('show')">×
+                </button>
+              </li>                
+                <li><a class="header__menu__item" href="#products">Products</a></li>
+                <li><a class="header__menu__item" href="#solutions">Solutions</a></li>
+                <li><a class="header__menu__item" href="#about">About Us</a></li>
+                <li><a class="header__menu__item" href="#features">Features</a></li>
+                <li><a class="header__menu__item" href="#case-studies">Case Studies</a></li>
+                <li><a class="header__menu__item" href="#resources">Resources</a></li>
+                <li><a class="header__menu__item" href="#contact">Contact Us</a></li>
             </ul>
-        </nav>
-    </header>
+        </nav>        
+   
     <!-- Main -->
     <main>
         <!-- Home -->
-        <section id="home">
-            <img class="home__avatar" src="images/profile.png" alt="Kim's profile">
-            <h2 class="home__title">Hello<br /> I&#39;m <strong class="home__title-strong">Dream Coder</strong>, Kim</h2>
-            <p class="home__description">A software engineer currently residing in Seoul, Korea.</p>
-            <a class="home__contact" href="#contact">Contact Me</a>
-        </section>
-        <!-- About -->
-        <section id="about" class="section max-container">
-            <h2 class="tittle">About Me</h2>
-            <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-            </p>
-            <ul class="majors">
-                <li class="major">
-                    <i class="fa-brands fa-html5 major__icon"></i>
-                    <p class="major__tittle">Front-end</p>
-                    <p>HTML, CSS, JavaScript</p>
-                </li>
-                <li class="major">
-                    <i class="fa-solid fa-mobile major__icon"></i>
-                    <p class="major__tittle">Mobile</p>
-                    <p>Android, iOS, React Native</p>
-                </li>
-                <li class="major">
-                    <i class="fa-solid fa-server major__icon"></i>
-                    <p class="major__tittle">Back-end</p> 
-                    <p>Node.js, MySQL, MongoDB</p>
-                </li>
-            </ul>
-            <ul class="jobs">
-                <li class="job"><img src="images/google.png" alt="google logo">
-                <div>
-                    <p class="job__name">google as Senior Software Engineer</p>
-                    <p class="job__period">2025 - Until now</p>
-                </div>
-            </li>
-                <li class="job">
-                    <img src="images/samsung.png" alt="sansung logo">
-                    <div>
-                        <p class="job__name">samsung as Software Engineer</p>
-                        <p class="job__period">2025 - Until now</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <!-- Skills -->
-        <section id="skills" class="section">
-            <div class="max-container">
-                <h2 class="tittle">My Skills</h2>
-            <p class="description">Skills & Attributes</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-               Quisquam, quos.
-            </p>
-            <div class="skills">
-                <section class="skills__coding">
-                    <h3 class="skills__tittle">Coding Skills</h3>
-                    <ul>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>HTML</span><span>98%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 98%"></div></div
-                        </li>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>React</span><span>79%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 79%"></div></div
-                        </li>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>CSS</span><span>90%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 90%"></div></div
-                        </li>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>JavaScript</span><span>90%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 90%"></div></div
-                        </li>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>TypeScript</span><span>80%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 80%"></div></div
-                        </li>
-                        <li class="bar">
-                            <div class="bar__metadata"><span>Node.js</span><span>68%</span></div>
-                            <div class="bar__bg"><div class="bar__value" style="width: 68%"></div></div
-                        </li>
-                    </ul>
-                </section>
-                <section class="skills__tools">
-                    <h3 class="skills__tittle">Tools</h3>
-                    <ul>
-                        <li>Visual Studio Code</li>
-                        <li>IntelliJ</li>
-                        <li>Android Studio</li>
-                        <li>Xcode</li>
-                        <li>WebStorm</li>
-                    </ul>
-                </section>
-                <section class="skills__etc">
-                    <h3 class="skills__tittle">Etc</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>Scrum</li>
-                        <li>Math</li>
-                    </ul>
-                </section>
+        <section id="home" class="hero">
+            <div class="hero-container">
+              <p class="tagline">AI-Powered Sales and Customer Success for SMBs</p>
+              <h1 class="headline">
+                IchigoAI automates lead generation, outreach,<br />
+                and onboarding for B2B teams in Hong Kong and China.
+              </h1>
+              <p class="subtext">
+                Streamline your sales process and enhance customer success with cutting-edge AI tools designed for SMBs.
+              </p>
+              <div class="cta-buttons">
+                <a href="#signup" class="cta-button hero-button">Book a Demo</a>
+                <a href="https://calendly.com/your-scheduling-link" class="cta-button secondary" target="_blank">Start Free Trial</a>
+              </div>
             </div>
-            </div>
-        </section>
-        <!-- Work -->
-        <section id="work" class="section">
+          </section>
+          
+       
+        <!-- products -->
+        <section id="products" class="section">
            <div class="max-container">
-            <h2 class="tittle">My Work</h2>
-            <p class="description">Projects</p>
-            <ul class="categories">
-                <li><button class="category category--selected">All <span class="category__count">8</span></button></li>
-                <li><button class="category">Front-end <span class="category__count">3</span></button></li>
-                <li><button class="category">Back-end <span class="category__count">3</span></button></li>
-                <li><button class="category">Mobile <span class="category__count">2</span></button></li>
-            </ul>
-            <ul class="projects">
-                <li class="project"><a href="#" target="_blank">
-                    <img src="images/project1.webp" alt="project1" class="project__img"/>
-                    <div class="project__metadata">
-                        <h3 class="project__tittle">Project 1</h3>                        
-                        <p>Clone Coding with HTML, CSS</p>
-                    </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project2.webp" alt="project2" class="project__img"/>
+            <p class="tittle_item">Products</p>
+            <h2 class="tittle">Products Overview</h2>            
+           
+            <ul class="products">
+                <!-- products 카드 1 -->
+                <div class="card__item">
+                    <li class="project"><a href="#" target="_blank">
+                    
+                        <img src="images/lead_generation.png" alt="lead_generation" class="project__img">
                         <div class="project__metadata">
-                            <h3 class="project__tittle">Project 2</h3>
-                            <p>Clone Coding with HTML, CSS</p>
+                            <h3 class="project__tittle">LeadGenius AI</h3>                           
                         </div>  
                 </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project3.webp" alt="project3" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 3</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project4.webp" alt="project4" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 4</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project5.webp" alt="project5" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 5</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project6.webp" alt="project6" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 6</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project7.webp" alt="project7" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 7</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
-                <li class="project"><a href="#" target="_blank">
-                    <a href="#" target="_blank">
-                        <img src="images/project8.webp" alt="project8" class="project__img"/>
-                        <div class="project__metadata">
-                            <h3 class="project__tittle">Project 8</h3>
-                            <p>Clone Coding with HTML, CSS</p>
-                        </div>  
-                </a></li>
+                    <div class="card__item__text">                   
+                    <p>Automate lead capture and qualification with precision</p> 
+                    <a href="leadgenius.html" target="_blank" class="learn__more">Learn More</a>                  
+                    </div>
+                </div> 
+                               
+                <!-- products 카드 2 -->
+                <div class="card__item card__item--second">
+                    <li class="project"><a href="#" target="_blank">
+                        <a href="#" target="_blank">
+                            <img src="images/onboarding_journey.png" alt="onboarding_journey" class="project__img"/>
+                            <div class="project__metadata">
+                                <h3 class="project__tittle">OutreachPro AI</h3>                              
+                            </div>  
+                    </a></li>
+                    <div class="card__item__text">                      
+                        <p>Personalize outreach and book more meetings  </p>
+                        <a href="outreachpro.html" target="_blank" class="learn__more">Learn More</a>
+                    </div>
+                </div>               
+                
+                <div class="card__item">
+                    <li class="project"><a href="#" target="_blank">
+                        <a href="#" target="_blank">
+                            <img src="images/online_meeting_AI.png" alt="online_meeting_AI" class="project__img"/>
+                            <div class="project__metadata">
+                                <h3 class="project__tittle">OnboardEase AI</h3>                                
+                            </div>  
+                    </a></li>
+                    <div class="card__item__text">                       
+                        <p>Simplify customer onboarding with smart guidance</p>
+                        <a href="onboardease.html" target="_blank" class="learn__more">Learn More</a>
+                    </div>
+                </div>
+
             </ul>
         </section>
            </div>
-        <!-- Testimonials -->
-        <section id="testimonials" class="section max-container">
-            <h2 class="tittle">Testimonials</h2>
-            <p class="description">See what they say about me</p>
-            <ul class="testimonials">
-                <li class="testimonial"><img src="images/people1.webp" alt="people1" class="testimonial__img"/>
-                <div class="testimonial__bubble">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quisquam, quos.
-                    </p>
-                    <p><a href="#" class="testimonial__bubble__name">John Doe</a>/Google</p>
+
+           <section id="solutions" class="section">
+            <div class="max-container">
+                <p class="tittle_item">solutions</p>
+             <h2 class="tittle">Solutions Overview</h2>
+                                       
+             <ul class="solutions">
+              <!-- Card 1 -->
+              <li class="solutions__card__item">
+                <img src="images/dashboard.png" alt="SalesBoost" class="solution__image" />
+                <div class="project__text">
+                  <h3>SalesBoost</h3>
+                  <p>Accelerate sales with AI-driven lead management</p>
+                  <a href="salesboost.html" class="cta-button small">Learn More</a>
                 </div>
-                </li>
-                <li class="testimonial">
-                <img src="images/people2.webp" alt="people2" class="testimonial__img"/>
-                <div class="testimonial__bubble">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quisquam, quos.
-                    </p>
-                    <p><a href="#" class="testimonial__bubble__name">Anna Jin</a>/Samsung</p>
+              </li>
+            
+              <!-- Card 2 -->
+              <li class="solutions__card__item reverse">
+                <img src="images/onboarding.png" alt="CustomerEngage" class="solution__image" />
+                <div class="project__text">
+                  <h3>CustomerEngage</h3>
+                  <p>Enhance customer success with automated onboarding</p>
+                  <a href="customerengage.html" class="cta-button small">Learn More</a>
                 </div>
-                </li>
-                <li class="testimonial">
-                    <img src="images/people3.webp" alt="people3" class="testimonial__img"/>
-                    <div class="testimonial__bubble">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quisquam, quos.
-                        </p>
-                        <p><a href="#" class="testimonial__bubble__name">Anna Jin</a>/Samsung</p>
-                    </div>
-                </li>
+              </li>
+            
+              <!-- Card 3 -->
+              <li class="solutions__card__item">
+                <img src="images/calendar.png" alt="SMBScale" class="solution__image" />
+                <div class="project__text">
+                  <h3>SMBScale</h3>
+                  <p>Grow your SMB with affordable AI tools</p>
+                  <a href="smbscale.html" class="cta-button small">Learn More</a>
+                </div>
+              </li>
             </ul>
+            
+         </section>
+            </div>
+
+              <!-- About -->
+        <section id="about" class="section max-container">
+            <p class="tittle_item">About Us</p>
+            <h2 class="tittle">Empowering SMBs with AI-Driven Solutions</h2>       
+             <p>IchigoAI empowers SMBs in Hong Kong and China to succeed with AI-powered sales and customer success tools.
+                Founded in 2025, our Hong Kong-based team is dedicated to making advanced technology accessible and 
+                affordable for businesses of all sizes
+            </p>     
+            <a href="#about" class="cta-button about">Learn More About Our Mission</a>           
         </section>
+
+        <section id="features" class="section">
+          <div class="max-container">
+            <p class="tittle_item">Features</p>
+            <h2 class="tittle">Powerful Features for Smarter Business</h2>
+            <ul class="projects">
+              
+              <!-- 카드 1 -->
+              <li class="card__item">
+                <a href="#" class="project" target="_blank">
+                  <img src="images/target.png" alt="project4" class="project__img" />
+                  <div class="project__metadata">
+                    <h3 class="project__tittle">Lead Capture and Scoring</h3>                    
+                  </div>
+                </a>
+                <div class="card__item__text">
+                  <p>Automate lead qualification in real-time</p>                  
+                </div>
+              </li>
+        
+              <!-- 카드 2 -->
+              <li class="card__item">
+                <a href="#" class="project" target="_blank">
+                  <img src="images/email.png" alt="project5" class="project__img" />
+                  <div class="project__metadata">
+                    <h3 class="project__tittle">Personalized Outreach</h3>                    
+                  </div>
+                </a>
+                <div class="card__item__text">
+                  <p>Send tailored messages that convert</p>
+                </div>
+              </li>
+        
+              <!-- 카드 3 -->
+              <li class="card__item">
+                <a href="#" class="project" target="_blank">
+                  <img src="images/customer.png" alt="project6" class="project__img" />
+                  <div class="project__metadata">
+                    <h3 class="project__tittle">Onboarding Automation</h3>                  
+                  </div>
+                </a>
+                <div class="card__item__text">
+                  <p>Guide customers with ease</p>
+                </div>
+              </li>
+        
+              <!-- 카드 4 -->
+              <li class="card__item">
+                <a href="#" class="project" target="_blank">
+                  <img src="images/language.png" alt="project7" class="project__img" />
+                  <div class="project__metadata">
+                    <h3 class="project__tittle">Multilingual Support</h3>                    
+                  </div>
+                </a>
+                <div class="card__item__text">
+                  <p>Engage in Cantonese, Mandarin, and English</p>
+                </div>
+              </li>
+        
+              <!-- 카드 5 -->
+              <li class="card__item">
+                <a href="#" class="project" target="_blank">
+                  <img src="images/crm.png" alt="project8" class="project__img" />
+                  <div class="project__metadata">
+                    <h3 class="project__tittle">CRM Integration</h3>                    
+                  </div>
+                </a>
+                <div class="card__item__text">
+                  <p>Sync with your existing tools</p>
+                </div>
+              </li>
+        
+            </ul>
+          </div>
+        </section>
+        
+                </div>
+               
+        <!-- case-studies -->
+        <section id="case-studies" class="section">
+            <div class="max-container">
+                <p class="tittle_item">Case Studies</p>
+                <h2 class="tittle">Real Results from Real Businesses</h2>
+            <p class="description">TechRise HK</p>
+            <p>Increased demo bookings from 10 to 50 per month using LeadGenius AI and OutreachPro AI
+            </p>
+           <!-- Case Studies 섹션 내 -->
+                <div class="case-studies">                    
+                  <!-- 그래프 1 -->
+                  <div class="cart_card_item">
+                   <canvas id="chart1" height="200"></canvas>
+                  </div>
+              
+                  <!-- 그래프 2 -->
+                  <div class="cart_card_item">
+                   <canvas id="chart2" height="200"></canvas>
+                  </div>
+              </div>
+  
+            </div>
+        </section>
+
+             <!-- Testimonials -->
+             <section id="resources" class="section max-container">
+                 <p class="tittle_item">Resources</p>
+                 <h2 class="tittle">Tools and Insights for SMB Success</h2>                 
+                 <ul class="resources__card">
+                     <li class="testimonial"><img src="images/Transformation.png" alt="people1" class="testimonial__img"/>
+                     <div class="testimonial__bubble">
+                         <p>Blog</p>
+                         <p>How AI Transforms Sales in Hong Kong</p>                         
+                     </div>
+                     </li>
+                     <li class="testimonial">
+                     <img src="images/starter_kit.png" alt="people2" class="testimonial__img"/>
+                        <div class="testimonial__bubble">
+                         <p>Guide</p>
+                         <p>SMB AI Starter Kit” (downloadable PDF)</p>                         
+                        </div>
+                     </li>                    
+                 </ul>
+                 <a href="#" class="cta-button resources-button">Explore Resources</a>
+             </section>
+            </div>
+
+         <!-- Testimonials -->
+         <section id="contact" class="section contact__section">
+            <div class="max-container contact__box">
+                <p class="tittle_item">Contact Us</p>
+                <h4 class="tittle">Let’s Connect</h4>     
+              <div class="contact__actions">
+                <button class="contact__button">
+                  <i class="fa-solid fa-phone contact__icon"></i> Call
+                </button>
+                <button class="contact__button">
+                  <i class="fa-solid fa-envelope contact__icon"></i> Email
+                </button>
+              </div>
+          
+              <form class="contact__form">
+                <div class="contact__form-row">
+                  <input type="text" placeholder="First name" required />
+                  <input type="text" placeholder="Last name" required />
+                </div>
+                <input type="email" placeholder="Email" required />
+                <textarea placeholder="Your message" rows="5" required></textarea>
+                <button type="submit" class="contact__submit">Submit</button>
+              </form>
+            </div>
+          </section>
+          
+        </div>
+        
         <!-- Arrow up -->
          <aside>
             <a class="arrow-up" href="#home" title="back to top"><i class="fa-solid fa-arrow-up"></i></a>
          </aside>
     </main>
-    <!-- Footer -->
-    <footer id="contact" class="section">
-        <div class="max-container">
-            <h2 class="tittle">Let&#39;s talk</h2>
-        <p class="description">dream.coder.seungkyum193@gmail.com</p>
-        <ul class="contact__links">
-            <li>
-             <a class="contact__link" href="https://github.com/seungkyum193" 
-                tittle="my github link"
-                target="_blank">
-                    <i class="fa-brands fa-github"></i>
-             </a>
-            </li>
-            <li>
-             <a class="contact__link" href="https://github.com/seungkyum193" 
-                tittle="my linkedin link"
-                target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            </li>
-        </ul>
-        <p>Copyright 2025. Kim. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // header.html 파일을 불러와서 페이지의 body 시작 부분에 삽입
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('afterbegin', data); // 페이지 상단에 삽입
+
+            // header.html이 삽입된 후, 햄버거 메뉴 버튼에 이벤트 리스너를 추가
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // 햄버거 버튼 클릭 시 메뉴 토글
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('show');
+            });
+        })
+        .catch(error => console.error('Header 로딩 오류:', error));
+    
+    // 그래프 1: 데모 예약 증가
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Before', 'After'],
+            datasets: [{
+                label: 'Demo Bookings',
+                data: [10, 50],
+                backgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Demo Bookings Growth'
+                }
+            }
+        }
+    });
+
+    // 그래프 2: AI 성능 비교
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['LeadGenius AI', 'OutreachPro AI'],
+            datasets: [{
+                label: 'Impact Score',
+                data: [28, 22],
+                backgroundColor: ['#4BC0C0', '#FF9F40']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'AI Tool Contribution'
+                }
+            }
+        }
+    });
+
+    // footer.html 파일을 불러와서 페이지의 body 끝에 삽입
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Footer 로딩 오류:', error));
+});
+
+// 메뉴 닫기 함수
+function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('show');
+}
+
+    </script>
+    </body>     
 </html>

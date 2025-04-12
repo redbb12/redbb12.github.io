@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMBScale - Product Details</title>
+
+  <!-- 스타일 및 아이콘 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .smbscale-section {
+      text-align: center;
+    }
+
+    .smbscale-wrapper {
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .smbscale-section img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .smbscale-section h3 {
+      margin-top: 2rem;
+    }
+
+    .smbscale-wrapper ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header 삽입 + 햄버거 스크립트 바인딩 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+
+          // header 로드 후 햄버거 버튼 바인딩
+          const hamburgerBtn = document.getElementById('hamburger-btn');
+          const mobileMenu = document.getElementById('mobile-menu');
+
+          if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('show');
+              document.body.style.overflow = mobileMenu.classList.contains('show') ? 'hidden' : 'auto';
+            });
+          }
+        })
+        .catch(error => console.error('Header 로딩 오류:', error));
+    });
+  </script>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="section max-container smbscale-section">
+    <h2 class="tittle">SMBScale</h2>
+
+    <div class="smbscale-wrapper">
+      <p style="font-size: 1.2rem;">
+        Grow your SMB with affordable AI tools. SMBScale delivers enterprise-grade features at a price point tailored for small businesses in Hong Kong and China.
+      </p>
+
+      <img src="images/calendar.png" alt="SMBScale AI" />
+
+      <h3>Key Benefits</h3>
+      <ul>
+        <li>Budget-friendly pricing starting at $99/month.</li>
+        <li>Easy setup in minutes with guided onboarding.</li>
+        <li>Local language support for Cantonese, Mandarin, and English.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer 삽입 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Footer 로딩 오류:', error));
+    });
+  </script>
+
+</body>
+</html>

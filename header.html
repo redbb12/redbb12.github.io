@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="header__top">
+    <div class="header__logo">
+      <img class="header__logo-img" src="images/ichigoai_logo.png" alt="logo">
+      <h1 class="header__logo-title"><a href="index.html">IchigoAI</a></h1>
+    </div>
+    <button class="hamburger" id="hamburger-btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <nav class="header__nav">
+    <ul class="header__menu" id="mobile-menu">
+      <li>
+        <button class="hamburger-close" onclick="document.getElementById('mobile-menu').classList.remove('show')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+
+      <!-- Products -->
+      <li class="dropdown">
+        <a class="header__menu__item" href="index.html#products" onclick="closeMobileMenu()">Products</a>
+        <ul class="dropdown-menu">
+          <li><a href="leadgenius.html" onclick="closeMobileMenu()">LeadGenius AI</a></li>
+          <li><a href="outreachpro.html" onclick="closeMobileMenu()">OutreachPro AI</a></li>
+          <li><a href="onboardease.html" onclick="closeMobileMenu()">OnboardEase AI</a></li>
+        </ul>
+      </li>
+
+      <!-- Solutions -->
+      <li class="dropdown">
+        <a class="header__menu__item" href="index.html#solutions" onclick="closeMobileMenu()">Solutions</a>
+        <ul class="dropdown-menu">
+          <li><a href="salesboost.html" onclick="closeMobileMenu()">SalesBoost</a></li>
+          <li><a href="customerengage.html" onclick="closeMobileMenu()">CustomerEngage</a></li>
+          <li><a href="smbscale.html" onclick="closeMobileMenu()">SMBScale</a></li>
+        </ul>
+      </li>
+
+      <!-- Index page section anchors -->
+      <li><a class="header__menu__item" href="index.html#about" onclick="closeMobileMenu()">About Us</a></li>
+      <li><a class="header__menu__item" href="index.html#features" onclick="closeMobileMenu()">Features</a></li>
+      <li><a class="header__menu__item" href="index.html#case-studies" onclick="closeMobileMenu()">Case Studies</a></li>
+      <li><a class="header__menu__item" href="index.html#resources" onclick="closeMobileMenu()">Resources</a></li>
+      <li><a class="header__menu__item" href="index.html#contact" onclick="closeMobileMenu()">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>

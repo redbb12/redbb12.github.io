@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SalesBoost - Product Details</title>
+
+  <!-- 스타일 및 아이콘 -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <style>
+    .salesboost-section {
+      text-align: center;
+    }
+
+    .salesboost-wrapper {
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .salesboost-section img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .salesboost-section h3 {
+      margin-top: 2rem;
+    }
+
+    .salesboost-wrapper ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header 삽입 및 햄버거 스크립트 바인딩 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+
+          // header 로드 후 햄버거 버튼 기능 바인딩
+          const hamburgerBtn = document.getElementById('hamburger-btn');
+          const mobileMenu = document.getElementById('mobile-menu');
+
+          if (hamburgerBtn && mobileMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('show');
+              document.body.style.overflow = mobileMenu.classList.contains('show') ? 'hidden' : 'auto';
+            });
+          }
+        })
+        .catch(error => console.error('Header 로딩 오류:', error));
+    });
+  </script>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="section max-container salesboost-section">
+    <h2 class="tittle">SalesBoost</h2>
+
+    <div class="salesboost-wrapper">
+      <p style="font-size: 1.2rem;">
+        Accelerate sales with AI-driven lead management. SalesBoost helps B2B teams shorten sales cycles and close deals faster.
+      </p>
+
+      <img src="images/dashboard.png" alt="SalesBoost AI" />
+
+      <h3>Key Benefits</h3>
+      <ul>
+        <li>Real-time lead scoring and prioritization.</li>
+        <li>Automated follow-ups and meeting scheduling.</li>
+        <li>Seamless CRM integration.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer 삽입 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Footer 로딩 오류:', error));
+    });
+  </script>
+
+</body>
+</html>
