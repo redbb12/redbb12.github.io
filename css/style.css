@@ -908,7 +908,13 @@ hr {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-    }    
+    }
+    
+    .header__menu {
+      max-height: 100vh;        /* 전체 화면 높이 제한 */
+      overflow-y: auto;         /* 넘치면 스크롤 가능 */
+      -webkit-overflow-scrolling: touch; /* iOS 스크롤 부드럽게 */
+    }
   
     .hamburger {
         display: block;
@@ -1190,7 +1196,48 @@ hr {
     line-height: 1.4;
     word-break: break-word;    /* ✅ 긴 단어 줄바꿈 */
   }
-  
+
+  .header__menu .dropdown-menu {
+    display: block !important;
+    position: static;
+    background: none;
+    padding-left: 0;          /* ✅ 들여쓰기 제거 */
+    padding-top: 0.5rem;
+    text-align: center;       /* ✅ 메뉴 가운데 정렬 */
+  }
+
+  .header__menu .dropdown-menu li {
+    margin: 0.4rem 0;         /* ✅ 간격 추가로 균형 맞춤 */
+  }
+
+  .header__menu .dropdown-menu li a {
+    color: #000;
+    font-size: 1rem;
+    padding: 0.3rem 0;
+    display: inline-block;    /* ✅ 가운데 정렬 유지 */
+  }
+
+  /* 메뉴 그룹 제목 (Products, Solutions)도 가운데로 */
+  .header__menu .dropdown > a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* 모바일에서는 hover 기능 제거 */
+  .header__menu .dropdown:hover .dropdown-menu {
+    display: block !important;
+  }
+
+  .header__menu .dropdown-menu li a:hover,
+  .header__menu .dropdown-menu li a:active,
+  .header__menu .dropdown-menu li a:focus {
+    background-color: transparent !important;
+    color: #000;
+  }
 
   #home,
 #products,
